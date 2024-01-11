@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class SesionController {
+public class SessionController {
 
 	@Autowired
 	private Usuario usuario;
