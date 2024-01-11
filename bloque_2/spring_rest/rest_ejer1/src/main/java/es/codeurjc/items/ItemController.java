@@ -31,36 +31,36 @@ public class ItemController {
 	@GetMapping("/{id}")
 	public ResponseEntity<Item> getItem(@PathVariable long id) {
 
-		Item post = items.findById(id);
+		Item item = items.findById(id);
 
-		if (post != null) {
-			return ResponseEntity.ok(post);
+		if (item != null) {
+			return ResponseEntity.ok(item);
 		} else {
 			return ResponseEntity.notFound().build();
 		}
 	}
 
 	@PostMapping("/")
-	public ResponseEntity<Item> createItem(@RequestBody Item post) {
+	public ResponseEntity<Item> createItem(@RequestBody Item item) {
 
-		items.save(post);
+		items.save(item);
 
-		URI location = fromCurrentRequest().path("/{id}").buildAndExpand(post.getId()).toUri();
+		URI location = fromCurrentRequest().path("/{id}").buildAndExpand(item.getId()).toUri();
 
-		return ResponseEntity.created(location).body(post);
+		return ResponseEntity.created(location).body(item);
 	}
 
 	@PutMapping("/{id}")
 	public ResponseEntity<Item> replaceItem(@PathVariable long id, @RequestBody Item newItem) {
 
-		Item post = items.findById(id);
+		Item item = items.findById(id);
 
-		if (post != null) {
+		if (item != null) {
 
 			newItem.setId(id);
 			items.save(newItem);
 
-			return ResponseEntity.ok(post);
+			return ResponseEntity.ok(item);
 		} else {
 			return ResponseEntity.notFound().build();
 		}
@@ -69,11 +69,11 @@ public class ItemController {
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Item> deleteItem(@PathVariable long id) {
 
-		Item post = items.findById(id);
+		Item item = items.findById(id);
 
-		if (post != null) {
+		if (item != null) {
 			items.deleteById(id);
-			return ResponseEntity.ok(post);
+			return ResponseEntity.ok(item);
 		} else {
 			return ResponseEntity.notFound().build();
 		}
