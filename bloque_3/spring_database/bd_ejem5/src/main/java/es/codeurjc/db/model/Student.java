@@ -1,10 +1,10 @@
 package es.codeurjc.db.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -17,7 +17,7 @@ public class Student {
 	private long id;
 
 	private String name;
-	private int year;
+	private int startYear;
 
 	@OneToOne
 	private Project project;
@@ -28,7 +28,7 @@ public class Student {
 	public Student(String name, int year) {
 		super();
 		this.name = name;
-		this.year = year;
+		this.startYear = year;
 	}
 
 	public long getId() {
@@ -43,16 +43,16 @@ public class Student {
 		return name;
 	}
 
-	public void setName(String author) {
-		this.name = author;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public int getYear() {
-		return year;
+	public int getStartYear() {
+		return startYear;
 	}
 
-	public void setYear(int goals) {
-		this.year = goals;
+	public void setStartYear(int startYear) {
+		this.startYear = startYear;
 	}
 
 	public Project getProject() {
@@ -65,7 +65,7 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return "Player [id=" + id + ", name=" + name + ", goals=" + year + "]";
+		return "Student [id=" + id + ", name=" + name + ", startYear=" + startYear + "]";
 	}
 
 }

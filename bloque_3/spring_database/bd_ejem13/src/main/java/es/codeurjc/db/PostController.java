@@ -2,7 +2,7 @@ package es.codeurjc.db;
 
 import java.util.Collection;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,10 +24,10 @@ public class PostController {
 	}
 
 	@GetMapping("/")
-	public Collection<Post> getPosts(@RequestParam(required = false) String user) {
+	public Collection<Post> getPosts(@RequestParam(required = false) String username) {
 
-		if (user != null) {
-			return posts.findByUser(user);
+		if (username != null) {
+			return posts.findByUsername(username);
 		} else {
 			return posts.findAll();
 		}

@@ -1,11 +1,11 @@
 package es.codeurjc.db.model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Student {
@@ -15,7 +15,7 @@ public class Student {
 	private long id;
 
 	private String name;
-	private int year;
+	private int startYear;
 
 	@OneToOne(cascade=CascadeType.ALL)
 	private Project project;
@@ -26,7 +26,7 @@ public class Student {
 	public Student(String name, int year) {
 		super();
 		this.name = name;
-		this.year = year;
+		this.startYear = year;
 	}
 
 	public long getId() {
@@ -41,16 +41,16 @@ public class Student {
 		return name;
 	}
 
-	public void setName(String author) {
-		this.name = author;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public int getYear() {
-		return year;
+	public int getStartYear() {
+		return startYear;
 	}
 
-	public void setYear(int goals) {
-		this.year = goals;
+	public void setStartYear(int year) {
+		this.startYear = year;
 	}
 
 	public Project getProject() {
@@ -63,7 +63,7 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return "Player [id=" + id + ", name=" + name + ", goals=" + year + "]";
+		return "Student [id=" + id + ", name=" + name + ", startYear=" + startYear + "]";
 	}
 
 }

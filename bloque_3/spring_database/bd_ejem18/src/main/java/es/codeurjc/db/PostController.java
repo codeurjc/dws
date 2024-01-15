@@ -1,6 +1,6 @@
 package es.codeurjc.db;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -24,10 +24,10 @@ public class PostController {
 	}
 
 	@GetMapping("/")
-	public Page<Post> getPosts(@RequestParam(required = false) String user, Pageable page) {
+	public Page<Post> getPosts(@RequestParam(required = false) String username, Pageable page) {
 
-		if (user != null) {
-			return posts.findByUser(user, page);
+		if (username != null) {
+			return posts.findByUsername(username, page);
 		} else {
 			return posts.findAll(page);
 		}
