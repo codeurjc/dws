@@ -16,7 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import es.codeurjc.daw.library.security.jwt.AuthEntryPointJwt;
+import es.codeurjc.daw.library.security.jwt.UnauthorizedHandlerJwt;
 import es.codeurjc.daw.library.security.jwt.JwtRequestFilter;
 
 @Configuration
@@ -30,7 +30,7 @@ public class SecurityConfig {
     public RepositoryUserDetailsService userDetailService;
 
 	@Autowired
-  	private AuthEntryPointJwt unauthorizedHandler;
+  	private UnauthorizedHandlerJwt unauthorizedHandlerJwt;
 
 	@Bean
 	public PasswordEncoder passwordEncoder() {
@@ -60,7 +60,7 @@ public class SecurityConfig {
 		
 		http
 			.securityMatcher("/api/**")
-			.exceptionHandling(handling -> handling.authenticationEntryPoint(unauthorizedHandler));
+			.exceptionHandling(handling -> handling.authenticationEntryPoint(unauthorizedHandlerJwt));
 		
 		http
 			.authorizeHttpRequests(authorize -> authorize
