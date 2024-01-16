@@ -1,0 +1,21 @@
+body {
+    padding-top: 1em;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap-reverse;
+    background: steelblue;
+    width: 100px;
+    height: 100px;
+}
+
+.item {
+    background: grey;
+    min-height: 20px;
+    min-width: 20px;
+    border: 1px solid black;
+    text-align: center;
+}

@@ -1,0 +1,31 @@
+.grid {
+    display: grid;
+}
+
+.item {
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+.a {
+    background: blue;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.b {
+    background: red;
+    grid-row-start: 2;
+}
+
+.c {
+    background: green;
+    grid-row-start: 2;
+}
+
+.d {
+    background: orange;
+    grid-row-start: 3;
+    grid-column-start: 2
+}

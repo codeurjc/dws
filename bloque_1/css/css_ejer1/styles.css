@@ -1,0 +1,29 @@
+a {
+    font-family: Verdana, sans-serif;
+    text-decoration: none;
+}
+
+span {
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffffff;
+    margin-top: 50px;
+}
+
+div {
+    height: 55px;
+    width: 130px;
+    border-color: #002F90;
+    border-style: solid;
+    background-color: #9DBADE;
+    border-width: 4px;
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+}
+
+img {
+    width: 32px;
+    height: 32px;
+    padding-top: 10px;
+}
