@@ -186,8 +186,8 @@
 	"variable": [
 		{
 			"id": "e2a228ec-d7f4-4fe9-bfdd-c81ddf2dd6d4",
-			"key": "server",
-			"value": "127.0.0.1:3000"
+			"key": "baseUrl",
+			"value": "localhost:8080"
 		}
 	],
 	"protocolProfileBehavior": {}
