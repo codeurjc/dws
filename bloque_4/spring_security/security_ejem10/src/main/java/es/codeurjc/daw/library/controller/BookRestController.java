@@ -70,11 +70,10 @@ public class BookRestController {
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Book> deleteBook(@PathVariable long id) {
 
-		try {
+		if(service.exist(id)) {
 			service.delete(id);
 			return new ResponseEntity<>(null, HttpStatus.OK);
-
-		} catch (EmptyResultDataAccessException e) {
+		} else {
 			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
 		}
 	}
