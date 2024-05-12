@@ -33,7 +33,7 @@ public class LoginController {
 
 	@PostMapping("/refresh")
 	public ResponseEntity<AuthResponse> refreshToken(
-			@CookieValue(name = "refreshToken", required = false) String refreshToken, HttpServletResponse response) {
+			@CookieValue(name = "RefreshToken", required = false) String refreshToken, HttpServletResponse response) {
 
 		return userService.refresh(response, refreshToken);
 	}
